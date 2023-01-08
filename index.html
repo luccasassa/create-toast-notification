@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- SEO -->
+    <meta name="author" content="https://linktr.ee/luccasassa" />
+    <meta name="description" content="Luca's little projects. If you found this content useful, please tap the ♥️ icon and give me a follow. Thanks ☺️" />
+
+    <!-- FAVICON -->
+    <link rel="icon" href="https://i.imgur.com/l6Z1OOF.png" />
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./template.css">
+
+    <!-- TITLE -->
+    <title>Toast Notification</title>
+  </head>
+
+  <body>
+    <button class="btn" id="button">Create Notification</button>
+    <div id="toasts"></div>
+
+    <!-- SCRIPTS -->
+    <script src="./scripts.js"></script>
+
+    <script>
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+              var div = document.createElement('div');
+              div.innerHTML = this.responseText;
+              document.body.appendChild(div)
+          }
+      }
+      
+      xhttp.open("GET", "https://raw.githubusercontent.com/luccasassa/API-REST/main/watermark.html", true);
+      xhttp.send();
+  </script>
+  </body>
+</html>
